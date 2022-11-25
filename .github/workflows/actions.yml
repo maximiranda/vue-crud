@@ -11,7 +11,7 @@ jobs:
           fetch-deph: 0
       - uses: actions/setup-node@v2
         with:
-          node-version: "18"
+          node-version: "18.10.0"
       - name: install dependencies
         run: npm install
       - name: test
