@@ -3,9 +3,16 @@ on:
     branches:
       - main
 jobs:
-  hello_world:
-   runs-on: ubuntu-18.04
-   steps:
-     - name: eche the message
-       run: echo "Hola mundo"
-  
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-deph: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+      - name: install dependencies
+        run: npm install
+      - name: test
+        run: npm run test:init
